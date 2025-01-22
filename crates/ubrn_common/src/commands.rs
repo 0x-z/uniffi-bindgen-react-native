@@ -21,6 +21,7 @@ pub fn run_cmd(cmd: &mut Command) -> Result<()> {
 
 /// Run the given command, and only output if there is an error.
 pub fn run_cmd_quietly(cmd: &mut Command) -> Result<()> {
+    dbg!(cmd);
     cmd.stdin(Stdio::inherit());
     let output = cmd.output().expect("Failed to execute command");
 
